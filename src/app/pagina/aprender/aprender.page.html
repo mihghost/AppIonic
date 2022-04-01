@@ -1,0 +1,322 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-menu-button color ="dark"slot="start"></ion-menu-button>
+    <ion-title color="dark">Matéria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment color="dark" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+    <ion-segment-button value="leideOhm" checked>
+      <img src="assets/img1.png" width="30">
+      <ion-label>Lei de Ohm</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="resistores" checked>
+      <img src="assets/img3.png" width="35">
+      <ion-label>Resistores</ion-label>
+      
+    </ion-segment-button>
+    <ion-segment-button value="capacitores" checked>
+      <img src="assets/img2.png" width="35">
+      <ion-label>Capacitores</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="codCores">
+      <img src="assets/img4.png" width="35">
+      <ion-label>Cod Resistores</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+<div [ngSwitch]="type">
+  <ion-card *ngSwitchCase="'leideOhm'">
+    <ion-card-header>
+      <ion-card-title><br> 1ª lei de Ohm</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      A 1ª lei de Ohm determina que a diferença de potencial entre dois pontos de um resistor é proporcional à corrente elétrica que é estabelecida nele. Além disso, de acordo com essa lei, a razão entre o potencial elétrico e a corrente elétrica é sempre constante para resistores ôhmicos.
+      <br/>
+      <div>
+      <img src="assets/LeiOhm.png" width="350">
+    </div>
+    <br/>
+    Na lei mostrada na figura acima, chamamos de U a tensão elétrica ou o potencial elétrico. Essa grandeza é escalar e é medida em Volts. A diferença de potencial elétrico entre dois pontos de um circuito, por sua vez, indica que ali existe uma resistência elétrica, como mostra a figura:
+    <br/>
+    <div>
+      <img src="assets/circuito1.png">
+    </div>
+    <br/>
+    Essa diferença decorre do consumo da energia dos elétrons, uma vez que essas partículas transferem parte de sua energia aos átomos da rede cristalina, quando conduzidos por meios que apresentem resistência à sua condução. O fenômeno que explica tal dissipação de energia é chamado de efeito Joule.
+    A figura abaixo mostra o perfil do potencial elétrico antes e após a passagem da corrente por um elemento resistivo de um circuito elétrico, observe a queda de energia:
+    <br/>
+    <br/>
+    <div>
+      <img src="assets/imagem3.png">
+    </div>
+    <br/>
+    A corrente elétrica i mede o fluxo de cargas pelo corpo em Ampères, ou em C/s. A corrente elétrica é diretamente proporcional à resistência elétrica dos corpos: quanto maior a resistência elétrica de um corpo, menor será a corrente elétrica a atravessá-lo.
+    <br/>
+    <ion-card-header>
+      <ion-card-title><br>Cálculo da potência elétrica pela lei de Ohm</ion-card-title>
+    </ion-card-header>
+    Por meio da lei de Ohm, é possível determinar a potência elétrica que é dissipada por um resistor. Tal dissipação de energia ocorre em razão do efeito Joule, por isso, ao calcularmos a potência dissipada, estamos determinando a quantidade de energia elétrica que um resistor é capaz de converter em calor, a cada segundo.
+    Existem algumas fórmulas que podem ser usadas para calcular a potência elétrica, confira algumas delas:
+    <br/>
+    <div>
+      <img src="assets/imagem4.png">
+    </div>
+    <br/>
+    <ion-card-header>
+      <ion-card-title>Macete</ion-card-title>
+    </ion-card-header>
+    Há um macete que pode facilitar o uso da 1ª lei de Ohm. Esse macete, chamado de macete do triângulo, consiste em tamparmos a variável que queremos descobrir no triângulo mostrado abaixo, de forma que revelemos a fórmula a ser usada. Confira:
+    <br/>
+    <br/>
+    <div>
+      <img src="assets/imagem5.png">
+    </div>
+    <br/>
+    Por exemplo, se quisermos calcular o potencial elétrico (U), basta tamparmos o U na figura acima, dessa forma, veremos que U é igual à corrente elétrica (i) multiplicada pela resistência (R). De maneira similar, se tamparmos a corrente elétrica (i), veremos que ela pode ser calculada pela divisão de U com R.
+  </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+  <ion-card *ngSwitchCase="'resistores'">
+    <ion-card-header>
+      <ion-card-title><br> Resistores</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Os resistores são dispositivos eletrônicos cuja função é a de transformar energia elétrica em energia térmica. Também chamados de resistências, estão presentes em aparelhos como chuveiros, televisores, computadores, aquecedores, ferro de passar roupa, rádios, lâmpadas incandescentes, dentre outros.
+      Os resistores são componentes que se opõem a passagem de corrente elétrica, ou seja, “resistem” a passagem de corrente elétrica, limitando sua intensidade. 
+      São representados pela letra R e no Sistema Internacional de Unidades (SI) são medidos em Ohm (Ω), ou seja, Volts (V) / Ampére (A).
+      <br/>
+      <ion-card-header>
+        <ion-card-title><br> Associação de Resistores</ion-card-title>
+      </ion-card-header>
+      Associação de Resistores é um circuito que apresenta dois ou mais resistores. Há três tipos de associação: em paralelo, em série e mista.
+      Ao analisar um circuito, podemos encontrar o valor do resistor equivalente, ou seja, o valor da resistência que sozinha poderia substituir todas as outras sem alterar os valores das demais grandezas associadas ao circuito.
+      Para calcular a tensão que os terminais de cada resistor está submetido aplicamos a Primeira Lei de Ohm:
+      U = R . i
+      Onde,
+      U: diferença de potencial elétrico (ddp), medida em Volts (V)
+      R: resistência, medida em Ohm (Ω)
+      i: intensidade da corrente elétrica, medida em Ampére (A).
+      <br/>
+      <ion-card-header>
+        <ion-card-title><br> Associação de Resistores em Série</ion-card-title>
+      </ion-card-header>
+      Na associação de resistores em série, os resistores são ligados em sequência. Isso faz com que a corrente elétrica seja mantida ao longo do circuito, enquanto a tensão elétrica varia.
+      <div>
+      <img src="assets/imagem6.png" width="350">
+    </div>
+    <br/>
+      Assim, a resistência equivalente (Req) de um circuito corresponde à soma das resistências de cada resistor presente no circuito:
+    <br/>
+    <div>
+      <img src="assets/imagem8.png">
+    </div>
+    <br/>
+      <ion-card-header>
+        <ion-card-title> Associação de Resistores em Paralelo </ion-card-title>
+      </ion-card-header>
+    Na associação de resistores em paralelo, todos os resistores estão submetidos a uma mesma diferença de potencial. Sendo a corrente elétrica dividida pelo ramos do circuito.
+    Assim, o inverso da resistência equivalente de um circuito é igual a soma dos inversos das resistências de cada resistor presente no circuito:
+    <br/>
+    <div>
+      <img src="assets/imagem9.png">
+    </div>
+    <br/>
+    Quando, em um circuito em paralelo, o valor das resistências forem iguais, podemos encontrar o valor da resistência equivalente dividindo o valor de uma resistência pelo número de resistências do circuito, ou seja:
+    <br/>
+    <div>
+      <img src="assets/imagem10.png">
+    </div>
+    <br/>
+    <ion-card-header>
+      <ion-card-title>Associação de Resistores Mista</ion-card-title>
+    </ion-card-header>
+    Na associação de resistores mista, os resistores são ligados em série e em paralelo. Para calculá-la, primeiro encontramos o valor correspondente à associação em paralelo e de seguida somamos aos resistores em série.
+    <br/>
+    <div>
+      <img src="assets/imagem11.png">
+    </div>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngSwitchCase="'capacitores'">
+    <ion-card-header>
+      <ion-card-title><br> Capacitores</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Capacitores são componentes eletrônicos que armazenam cargas elétricas para serem utilizadas sempre que a resistência elétrica dificulte a passagem da corrente.
+
+      A capacitância (C), que é a capacidade de armazenamento de um capacitor, é medida em Farad (F), o que é feito através da seguinte fórmula:<br>
+      <br>
+      <b>C = Q/V</b>
+      <br>
+      Onde,<br>
+      <b>C</b>: capacitância
+      <br>
+      <b>Q</b>: cargas elétricas
+      <br>
+      <b>V</b>: tensão
+      <br>
+      <br>
+      
+      O capacitor possui dois terminais: um positivo, que é maior, e um negativo, que é menor. Ele é formado por placas metálicas (armaduras) e por um material dielétrico que as separa. Os dielétricos são materiais isolantes que podem se tornar condutores, tais como celulose, cerâmica, teflon e vidro.
+      
+      Existem diferentes tipos de capacitor: cerâmico, eletrolítico, de mica, de óleo e papel, de poliéster, SDM, de tântalo, variável.
+      <br/>
+      <ion-card-header>
+        <ion-card-title><br> Associação de Capacitores</ion-card-title>
+      </ion-card-header>
+      A associação de capacitores tem como função armazenar energia elétrica para ser utilizada com uma finalidade específica. Pode acontecer de três modos: em série, paralela e mista.
+      <br/>
+      <ion-card-header>
+        <ion-card-title><br> Associação de Capacitores em Série</ion-card-title>
+      </ion-card-header>
+      Na associação de capacitores em série, as placas que constituem os capacitores são ligadas entre si da seguinte forma:
+
+      A placa negativa do capacitor liga-se à placa positiva de outro capacitor e assim sucessivamente.
+      <div>
+      <img src="assets/imagem12.png" width="350">
+    </div>
+    <br/>
+    Isso faz com que todos os capacitores tenham a mesma carga de associação, ou seja, Q = constante.
+
+    Através da seguinte fórmula é possível determinar a capacitância da associação de capacitores em série:
+    <br/>
+    <div>
+      <img src="assets/imagem13.png">
+    </div>
+    <br/>
+      <ion-card-header>
+        <ion-card-title> Associação de Capacitores em Paralelo </ion-card-title>
+      </ion-card-header>
+    Na associação de capacitores em paralelo as placas negativas dos capacitores são ligadas entre si.
+
+    Da mesma forma, as placas positivas também são ligadas entre elas. É por isso, que esse tipo de associação recebe o nome de associação paralela.
+
+
+    <br/>
+    <div>
+      <img src="assets/imagem14.png">
+    </div>
+    <br/>
+    Neste caso, todos os capacitores têm a mesma ddp (diferença de potencial elétrico), ou seja, V = constante.
+
+    Para calcular a associação de capacitores em paralelo, somamos as suas capacitância usando para tanto a fórmula:
+    <br/>
+    <div>
+      <img src="assets/imagem15.png">
+    </div>
+    <br/>
+    <ion-card-header>
+      <ion-card-title>Associação de Capacitores Mista</ion-card-title>
+    </ion-card-header>
+    Na associação de capacitores mista são encontrados capacitores ligados em série ou de forma paralela.
+    <br/>
+    <div>
+      <img src="assets/imagem16.png">
+    </div>
+    Por esse motivo, o cálculo da associação de capacitores mista deve ser feito em partes. Primeiro, calcula-se a capacitância da associação em paralelo.
+
+    Após obter esse valor, calcula-se a capacitância da associação em série.
+  </ion-card-content>
+  </ion-card>
+  <ion-card *ngSwitchCase="'codCores'">
+  <ion-card-header>
+    <ion-card-title><br>Código de Cores de Resistores</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Ao manusear um resistor, é fundamental saber qual o seu valor. Para isso, você pode utilizar o Código de Cores de Resistores.
+ 
+    Sabe aquelas listras coloridas impressas nos resistores? Elas são um código que diz exatamente o valor do resistor.
+    
+    E não só o valor, dizem também a tolerância, isto é, a margem de erro do valor da resistência e até mesmo um coeficiente de temperatura do componente.
+    
+    Claro, você poderia simplesmente medir o resistor com o multímetro para saber o seu valor.
+    <br/><br>
+    <div>
+      <img src="assets/imagem17.png" >
+    </div>
+    <br/>
+    Mas, ao trabalhar com vários desses componentes, ficaria inviável executar medições em vários deles. Imagine ter que medir 100, 200 resistores com o multímetro.
+ 
+    Para isso, você pode aprender o código de cores e saber o valor do componente apenas olhando para ele.
+    <br><br>
+    <div>
+      <img src="assets/imagem24.png">
+    </div>
+    <br/>
+    
+    Sim, no começo isso parece impossível. Mas com a prática, se torna algo muito simples e intuitivo.
+    <br>
+    <br>
+    <ion-card-header>
+      <ion-card-title> Como ler o Código de Cores de Resistores</ion-card-title>
+    </ion-card-header>
+    É simples: Pegue o resistor e procure um local há um espaço entre duas faixas maior do que os outros. Considere que para a esquerda você tem um grupo de faixas, e para direita outro.
+ 
+    Olhe para o resistor de forma que o grupo com 3 ou 4 faixas esteja posicionado mais a esquerda. Assim, você terá as faixas na ordem correta.
+    <br/><br>
+    <div>
+      <img src="assets/imagem18.png">
+    </div>
+    <br>
+ 
+    Veja que, na imagem acima, o grupo de faixas marrom, vermelha e preta é bem separado da faixa dourada. Logo, o grupo com 3 faixas é posicionado a esquerda e temos a ordem correta das faixas.
+ 
+    Se não houver esse espaçamento, a primeira faixa será aquela que estiver mais perto de um dos terminais do componente.
+    
+    Sempre faça essa analise antes de ler o código de cores. Caso contrário, você pode obter um resultado errado.
+    <br>
+    <br>
+    <ion-card-header>
+      <ion-card-title> Leitura de Código de Resistores: 3 e 4 faixas</ion-card-title>
+    </ion-card-header>
+    A leitura do código de cores para esses dois tipos de resistores é bem parecida.
+ 
+    Veja o que é cada faixa:
+    <div>
+    <img src="assets/imagem19.png">
+  </div>
+  <br/>
+  O resistor de 3 faixas não possui a faixa da tolerância. Logo, considera-se uma tolerância de 20%.
+ 
+  Vamos a um exemplo: determinar o valor da resistência do resistor abaixo, em ohms e a sua tolerância.
+  <br/>
+  <div>
+    <img src="assets/imagem20.png">
+  </div>
+  <br/>
+  Veja a tabela abaixo:
+  <div>
+    <img src="assets/imagem21.png">
+  </div>
+  <br/>
+  De acordo com a tabela, seguem as informações:
+  <div>
+    <img src="assets/imagem22.png">
+  </div>
+  <br/>
+  O que resulta em:<br>
+ 
+ <b> 65 x 1000Ω ( ±5% ) = 65000Ω ±5%</b><br>
+  
+  O resistor acima é de 65000Ω com tolerância de ±5%.<br>
+  <br/>
+  <br/>
+  
+  </ion-card-content>
+ </ion-card>
+
+
+
+
+  
+ </div>
+ </ion-content>

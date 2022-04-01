@@ -1,0 +1,71 @@
+
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-menu-button color ="light"slot="start"></ion-menu-button>
+    <ion-title color="light">Valor Resistor</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label>Primeira cor</ion-label>
+      <ion-select interface="popover" class="custom-options" id="digit-1" name="digit-1" [(ngModel)]="digit1">
+        <ion-select-option *ngFor="let digit of digits" value="{{ digit.value }}">
+            {{digit.color}}
+        </ion-select-option>
+    </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label>Segunda cor</ion-label>
+        <ion-select interface="popover" id="digit-2" name="digit-2" [(ngModel)]="digit2">
+            <ion-select-option *ngFor="let digit of digits" value="{{ digit.value }}">
+                {{digit.color}}
+            </ion-select-option>
+        </ion-select>  
+    </ion-item >
+    <ion-item lines="none">
+      <ion-label>Terceira Cor</ion-label>
+       <ion-select interface="popover" id="digit-3" name="digit-3" [(ngModel)]="digit3">
+            <ion-select-option *ngFor="let digit of digits" value="{{ digit.value }}">
+                {{digit.color}}
+            </ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Multiplicador: </ion-label>
+      <ion-select interface="popover" id="multiplier" name="multiplier" [(ngModel)]="multiplier">
+         <ion-select-option *ngFor="let multiplier of multipliers" value="{{ multiplier.value }}">
+            {{multiplier.color}}
+         </ion-select-option>
+       </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+     <ion-label>Tolerância: </ion-label>
+      <ion-select interface="popover" id="tolerance" name="tolerance" [(ngModel)]="tolerance">
+        <ion-select-option *ngFor="let tolerance of tolerances" value="{{tolerance.value }}">
+            {{tolerance.color}}
+        </ion-select-option>
+    </ion-select>
+    </ion-item>
+  </ion-list>  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block"class="shadow-red"   (click)="calculate()">calcular</ion-button>
+      </ion-col>
+    </ion-row>
+     <ion-row>
+      <ion-col size="12">
+        <div class="ion-text-center">
+          <h1 id="resistance">Resistência: {{resistance}}</h1>
+         </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+
+ 
+</ion-content>
+ 
+
+

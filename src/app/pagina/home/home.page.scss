@@ -1,0 +1,45 @@
+ion-segment {
+  --background:#ffc409;
+}
+.new-background-color{
+  --background:#4B0082;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+.shadow-red{
+  --border-radius: 10px;
+  --box-shadow: 0px 14px 25px #b032cf96;
+  --background:#4B0082;
+}
+ion-input{
+  border-radius: 8px !important;
+  padding-right: 30px;
+  font-size: 0.9em;
+  border: 1px solid #4B0082 !important;
+  --background: rgb(245, 245, 245) !important;
+  max-width: 50vw; // this is applying perfectly
+  max-height: 10vh;
+}
+ion-button {
+  --border-radius: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  }
+ion-item {
+
+    border-radius: 30px !important;
+    border: 1px white;
+/*other attributes*/
+}
+ion-label { 
+  display:block;
+  margin:20px;
+  width:420px;
+  overflow:auto;
+  font-family:sans-serif;
+  font-size:20px;
+  color:#444;
+  text-shadow:0 0 2px #ddd;
+  padding:20px 10px 10px 0;}

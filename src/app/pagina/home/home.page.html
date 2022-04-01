@@ -1,0 +1,69 @@
+
+ 
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-menu-button color ="light"slot="start"></ion-menu-button>
+    <ion-title color="light">Lei de Ohm</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="image-container">
+  <img src="assets/formulaOhm.png" width="350">
+</div>
+<br>
+<div class="ion-text-center">
+  <h4>Digite apenas dois valores</h4>
+ </div>
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label position="fixed">Resistência:</ion-label>
+      <ion-input type="number"[(ngModel)]="fr"></ion-input>
+      <pre><h3><b> Ω </b></h3></pre>
+     
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="fixed">Corrente: </ion-label>
+      <ion-input type="number"[(ngModel)]="fi"></ion-input>
+      <pre><h3><b> A </b></h3></pre>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="fixed">Voltagem: </ion-label>
+      <ion-input type="number"[(ngModel)]="fv"></ion-input>
+      <pre><h3><b> V </b></h3></pre>
+      <!--
+      <ion-input type="number"[(ngModel)]="voltagem"></ion-input>
+      -->
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Potência: </ion-label>
+      <ion-input  type="number"[(ngModel)]="fp"></ion-input>
+      <pre><h3><b> W </b></h3></pre>
+    </ion-item>
+    
+  
+ 
+    <h5>
+    </h5>
+  
+  
+    
+  </ion-list>
+ 
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block"class="shadow-red"   (click)="calc()">calcular</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" class="shadow-red"  (click)="reset()">resetar</ion-button>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+ 
+
+
+
+

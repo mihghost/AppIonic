@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-menu-button color ="light"slot="start"></ion-menu-button>
+    <ion-title color="light">Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p class='title'>Perguntas de Elétrica </p>
+  <p class='question'>Pergunta {{questionCounter}}/{{questions.length}}:
+    Qual a resposta correta?
+  </p>
+  <p class='quote'>
+    <ion-icon name="chatbox-ellipses-outline"></ion-icon>"{{ activeQuestion.quote }}"
+  </p>
+
+  <ion-list>
+    <ion-radio-group>
+      <ion-item *ngFor="let option of activeQuestion.options; let i=index">
+        <ion-label class='option'>{{option}}</ion-label>
+        <ion-radio *ngIf=!isCorrect (click)="checkOption(i, activeQuestion)">
+        </ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <br>
+  <div class="ion-text-center">
+    <ion-label><b>{{feedback}} </b></ion-label>
+    <br>
+  </div>
+ 
+ <br>
+  <img class="img" *ngIf=isCorrect src="../assets/lampada.png"
+    (click)="setQuestion()" tappable />
+</ion-content>
